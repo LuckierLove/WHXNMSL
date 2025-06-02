@@ -68,26 +68,6 @@ function createEffect(emoji, type) {
   });
 }
 
-// 为动态效果添加CSS样式 (需要添加到 styles.css)
-/*
-.interaction-effect {
-  position: fixed;
-  font-size: 30px;
-  opacity: 1;
-  animation: fadeOutUp 1.5s forwards;
-  pointer-events: none;
-  z-index: 10;
-}
-
-@keyframes fadeOutUp {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-50px); opacity: 0; }
-}
-*/
-
-// 删除这行导致错误的代码
-// element.dataset.type = Math.random() < 0.5 ? 'flower' : 'normal';
-
 
 // 移动窗口功能
 document.addEventListener('DOMContentLoaded', function() {
@@ -104,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 打开新网页
-    window.open('https://by.aytnyhzj.xyz/', '_blank');
+    alert('逝者为大');
   });
   
   // 为所有关闭按钮添加点击事件
