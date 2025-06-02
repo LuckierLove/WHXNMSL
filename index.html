@@ -6,15 +6,34 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <div class="memorial-container">
     <!-- 遗照占位符 -->
     <img src="./assets/head.jpg" alt="纪念像" class="portrait" id="memorial-portrait">
     
     <!-- 动态标题 -->
     <h1 class="glowing-title">污秽翔你妈死了</h1>
+
+    <!-- 新增功能区域 -->
+    <div class="interaction-area">
+      <button id="incense-btn" class="action-btn">上香</button>
+      <span class="count" id="incense-count">0</span>
+      <button id="flower-btn" class="action-btn">献花</button>
+      <span class="count" id="flower-count">0</span>
+    </div>
   </div>
 
   <div class="falling-effects"></div>
+  
+  <!-- 新增移动窗口 -->
+  <div class="moving-window" id="movingWindow">
+
+    <div class="window-content">
+      <p>【WHX】</p>
+      <p>R.I.P</p>
+      <p>你他妈是不是出生我问你</p>
+    </div>
+  </div>
   
   <script src="script.js"></script>
 </body>
