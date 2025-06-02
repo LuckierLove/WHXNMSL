@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #1a1a1a;
+  overflow: hidden;
+  position: relative;
+}
+
+.memorial-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.portrait {
+  width: 400px;  /* 增加宽度 */
+  height: 300px;  /* 降低高度 */
+  border: 3px solid #8b0000;
+  border-radius: 5px;
+  filter: sepia(0.5) contrast(1.2);
+  box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+  object-fit: cover;  /* 新增图片裁剪方式 */
+  aspect-ratio: 4/3;  /* 固定宽高比 */
+}
+
+.glowing-title {
+  color: #8b0000;
+  text-shadow: 0 0 10px #ff0000;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
