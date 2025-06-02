@@ -133,10 +133,16 @@ body {
   border: 2px solid #ff0000;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-  z-index: 1; /* 降低z-index，低于遗照 */
+  z-index: 1; /* 低于遗照 */
   animation: diagonalMove 15s linear infinite, colorChange 2s infinite alternate;
   pointer-events: auto;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  cursor: pointer; /* 添加手型光标，提示可点击 */
+}
+
+.moving-window:hover {
+  transform: scale(1.05); /* 悬停时略微放大 */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); /* 增强阴影效果 */
 }
 
 /* 当窗口与遗照重叠时应用的样式 */

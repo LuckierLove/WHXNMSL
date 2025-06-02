@@ -6,11 +6,14 @@ function createFallingEffect() {
   // 在 createFallingEffect 函数内完整实现
   setInterval(() => {
     const element = document.createElement('div');
+    // 在这里设置data-type属性，而不是在函数外部
+    element.dataset.type = Math.random() < 0.5 ? 'flower' : 'normal';
     element.className = 'falling-element' + (element.dataset.type === 'flower' ? ' horizontal-flower' : '');
     element.textContent = effects[Math.floor(Math.random() * effects.length)];
     element.style.left = Math.random() * 100 + '%';
     element.style.animationDuration = Math.random() * 3 + 2 + 's';
     element.style.color = `rgba(139,0,0,${Math.random()*0.5+0.5})`;
+    container.appendChild(element);
     
     // 新增奠花特效（100%概率测试用）
     const mourningFlower = document.createElement('div');
@@ -82,8 +85,8 @@ function createEffect(emoji, type) {
 }
 */
 
-// 在创建花朵元素时添加 data-type 属性
-element.dataset.type = Math.random() < 0.5 ? 'flower' : 'normal';
+// 删除这行导致错误的代码
+// element.dataset.type = Math.random() < 0.5 ? 'flower' : 'normal';
 
 
 // 移动窗口功能
@@ -92,6 +95,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeButtons = document.querySelectorAll('.close-btn');
   const memorialContainer = document.querySelector('.memorial-container');
   const memorialPortrait = document.getElementById('memorial-portrait');
+  
+  // 为移动窗口添加点击事件，打开新网页
+  movingWindow.addEventListener('click', function(event) {
+    // 阻止事件冒泡，确保关闭按钮的点击事件不受影响
+    if (event.target.classList.contains('close-btn')) {
+      return;
+    }
+    
+    // 打开新网页
+    window.open('https://by.aytnyhzj.xyz/', '_blank');
+  });
   
   // 为所有关闭按钮添加点击事件
   closeButtons.forEach(button => {
