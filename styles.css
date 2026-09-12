@@ -1,0 +1,184 @@
+:root {
+  --bg: #060606;
+  --panel: rgba(16, 16, 16, 0.75);
+  --gold: #c8a768;
+  --gold-soft: #f0dfb2;
+  --red: #871818;
+  --text: #f4f1eb;
+  --muted: #d7c8ab;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #291c16 0%, transparent 45%),
+              radial-gradient(circle at 85% 10%, #2c1313 0%, transparent 45%),
+              linear-gradient(160deg, #090909 0%, #16100d 45%, #070707 100%);
+  font-family: "Noto Serif SC", serif;
+  overflow-x: hidden;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: radial-gradient(#fff 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+}
+
+.hero {
+  min-height: 78vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--gold);
+  letter-spacing: 0.35em;
+  font-size: 0.72rem;
+}
+
+h1 {
+  margin: 0;
+  font: 700 clamp(2.3rem, 8vw, 5.4rem)/1.1 "Cormorant Garamond", serif;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 28px rgba(200, 167, 104, 0.35);
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  line-height: 1.9;
+}
+
+.cta {
+  justify-self: center;
+  margin-top: 0.4rem;
+  color: var(--gold-soft);
+  text-decoration: none;
+  border: 1px solid rgba(240, 223, 178, 0.45);
+  border-radius: 999px;
+  padding: 0.72rem 1.8rem;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  background: rgba(200, 167, 104, 0.12);
+}
+
+main {
+  padding: 0 1.2rem 4rem;
+}
+
+.panel {
+  width: min(960px, 100%);
+  margin: 0 auto 1.2rem;
+  border: 1px solid rgba(200, 167, 104, 0.24);
+  background: var(--panel);
+  backdrop-filter: blur(5px);
+  border-radius: 18px;
+  padding: 2rem 1.4rem;
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  color: var(--gold-soft);
+}
+
+.panel p {
+  margin: 0.8rem 0 0;
+  color: #e6dbc4;
+  line-height: 1.9;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+
+.stats article {
+  padding: 1rem;
+  border: 1px solid rgba(200, 167, 104, 0.24);
+  background: linear-gradient(180deg, rgba(135, 24, 24, 0.23), rgba(0, 0, 0, 0));
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stats strong {
+  display: block;
+  color: var(--gold-soft);
+  font: 600 1.7rem/1 "Cormorant Garamond", serif;
+}
+
+.stats span {
+  color: #f0e2c4;
+}
+
+.quote {
+  text-align: center;
+}
+
+blockquote {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  line-height: 1.9;
+  color: #f7edd8;
+}
+
+footer {
+  text-align: center;
+  color: #bea97d;
+  padding: 0.8rem 1rem 2.2rem;
+  letter-spacing: 0.08em;
+}
+
+body.reveal .panel,
+body.reveal .subtitle,
+body.reveal .cta {
+  animation: fadeUp 0.9s ease both;
+}
+
+body.reveal .panel:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.22em;
+  }
+}
